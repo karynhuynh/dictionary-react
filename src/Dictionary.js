@@ -10,6 +10,7 @@ export default function Dictionary() {
   const [results, setResults] = useState(null);
 
   function handleResponse(response) {
+    //   response that is sent by axios
     setResults(response.data[0]);
   }
 
@@ -32,6 +33,7 @@ export default function Dictionary() {
         <input type="submit" value="Search" />
       </form>
       <Results results={results} />
+      {/* any time the state changes, the information in return will re-compiled/ re-rendered with the new data */}
     </div>
   );
 }
