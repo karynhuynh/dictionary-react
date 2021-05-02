@@ -15,3 +15,32 @@ form {
   color: rgb(63, 63, 63);
   margin-top: 10px;
 }
+
+.Dictionary .dictionary-info {
+  display: flex;
+}
+
+.Dictionary .results-info {
+  max-width: 590px;
+  margin-right: 30px;
+}
+
+.Dictionary .results-photos {
+  max-width: 365px;
+}
+
+@media (max-width: 900px) {
+  .Dictionary .dictionary-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Dictionary .results-info {
+    max-width: 1000px;
+    margin-right: 0;
+  }
+
+  .Dictionary .results-photos {
+    max-width: 1000px;
+  }
+}

@@ -10,10 +10,13 @@ export default function Photos(props) {
           {props.photos.map((photo, index) => {
             console.log(photo);
             return (
-              <div className="col-6" key={index}>
+              <div className="col-12" key={index}>
                 <a href={photo.src.original} target="_blank" rel="noreferrer">
-                  <img src={photo.src.landscape} alt='corresponding pexels to keyword input'
-                  className="img-fluid" />
+                  <img
+                    src={photo.src.landscape}
+                    alt="corresponding pexels to keyword input"
+                    className="img-fluid"
+                  />
                 </a>
               </div>
             );

@@ -30,7 +30,7 @@ export default function Dictionary(props) {
     //documentation: https://www.pexels.com/api/documentation/
     const pexelsApiKey =
       "563492ad6f917000010000017f8eb52fa59540a9b3c4e9b9466289b8";
-    let pexelsUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=6`;
+    let pexelsUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=4`;
     let headers = { Authorization: `Bearer ${pexelsApiKey}` };
     axios.get(pexelsUrl, { headers: headers }).then(handlePexelsResponse);
   }
@@ -63,8 +63,14 @@ export default function Dictionary(props) {
           />
         </form>
         <section>
-          <Results results={results} />
-          <Photos photos={photos} />
+          <div className="dictionary-info">
+            <div className="results-info">
+              <Results results={results} />
+            </div>
+            <div className="results-photos">
+              <Photos photos={photos} />
+            </div>
+          </div>
         </section>
 
         {/* any time the state changes, the information in return will re-compiled/ re-rendered with the new data */}
