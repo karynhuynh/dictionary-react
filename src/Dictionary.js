@@ -2,23 +2,37 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import Results from "./Results";
+import Photos from "./Photos";
 
 import "./Dictionary.css";
 
 export default function Dictionary(props) {
   const [keyword, setKeyword] = useState(props.defaultKeyword);
   const [results, setResults] = useState(null);
-  let [loaded, setLoaded] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+  const [photos, setPhotos] = useState(null);
 
-  function handleResponse(response) {
+  function handleDictionaryResponse(response) {
     //   response that is sent by axios
     setResults(response.data[0]);
+  }
+
+  function handlePexelsResponse(response) {
+    console.log(response);
+    setPhotos(response.data.photos);
   }
 
   function search() {
     // documentation: https://dictionaryapi.dev/
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
-    axios.get(apiUrl).then(handleResponse);
+    axios.get(apiUrl).then(handleDictionaryResponse);
+
+    //documentation: https://www.pexels.com/api/documentation/
+    const pexelsApiKey =
+      "563492ad6f917000010000017f8eb52fa59540a9b3c4e9b9466289b8";
+    let pexelsUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=6`;
+    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+    axios.get(pexelsUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
   function load() {
@@ -50,6 +64,7 @@ export default function Dictionary(props) {
         </form>
         <section>
           <Results results={results} />
+          <Photos photos={photos} />
         </section>
 
         {/* any time the state changes, the information in return will re-compiled/ re-rendered with the new data */}
