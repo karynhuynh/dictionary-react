@@ -3,11 +3,16 @@
   padding: 0;
 }
 
+.Synonyms .synonym-title {
+  font-weight: bold;
+}
+
 .Synonyms li {
   display: inline-block;
   list-style: none;
-  padding-right: 10px;
-  font-size: 14px;
+  padding: 0 10px;
+  font-size: 15px;
   line-height: 1;
-  margin-top: 10px;
+  margin-top: 13px;
+  opacity: 0.7;
 }
