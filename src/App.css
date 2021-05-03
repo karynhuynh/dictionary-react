@@ -6,14 +6,19 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background: url(./images/book-background.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no repeat;
 }
 
 .App {
   max-width: 1000px;
   margin: 0 auto;
+  margin-bottom: 100px;
 }
 
 .App h1 {
-  font-size: 40px;
+  font-size: 45px;
   font-weight: bolder;
 }
