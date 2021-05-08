@@ -3,10 +3,6 @@
   padding: 0;
 }
 
-.Synonyms .synonym-title {
-  font-weight: bold;
-}
-
 .Synonyms li {
   display: inline-block;
   list-style: none;
