@@ -53,7 +53,7 @@ export default function Dictionary(props) {
     return (
       <div className="Dictionary">
         <form onSubmit={wordSubmit}>
-          <h5>What word do you want to look up?</h5>
+          <h4>What word do you want to look up?</h4>
           <input
             type="search"
             autoFocus={true}
