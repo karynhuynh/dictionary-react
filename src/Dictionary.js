@@ -53,7 +53,7 @@ export default function Dictionary(props) {
     return (
       <div className="Dictionary">
         <form onSubmit={wordSubmit}>
-          <h4>What word do you want to look up?</h4>
+          <h2>What word do you want to look up?</h2>
           <input
             type="search"
             autoFocus={true}
@@ -61,6 +61,9 @@ export default function Dictionary(props) {
             required
             onChange={wordSearch}
           />
+          <div className="hint">
+            Suggested words: water, ice cream, puppy...
+          </div>
         </form>
         <section>
           <div className="dictionary-info">
