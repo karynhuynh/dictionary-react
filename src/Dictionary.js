@@ -62,7 +62,7 @@ export default function Dictionary(props) {
             onChange={wordSearch}
           />
           <div className="hint">
-            Suggested words: water, ice cream, puppy...
+            suggested words: water, ice cream, puppy...
           </div>
         </form>
         <section>
