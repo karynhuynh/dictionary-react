@@ -22,11 +22,6 @@ form {
   margin-top: 10px;
 }
 
-.Dictionary button {
-  padding: 0;
-  margin: 0;
-}
-
 .Dictionary .hint {
   font-size: 11px;
   margin-top: 7px;
