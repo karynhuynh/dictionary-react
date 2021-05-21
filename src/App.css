@@ -9,7 +9,7 @@ body {
   background: url(./images/book-background.jpg);
   background-size: cover;
   background-position: center;
-  background-repeat: no repeat;
+  background-repeat: no-repeat;
 }
 
 .App {
