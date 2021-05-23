@@ -14,10 +14,5 @@ body {
 
 .App {
   max-width: 1000px;
-  margin: 0 auto;
-  margin-bottom: 100px;
-}
-
-.App .container {
-  margin: 100px 0;
+  margin: 100px auto;
 }
