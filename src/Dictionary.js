@@ -12,13 +12,14 @@ export default function Dictionary(props) {
   const [loaded, setLoaded] = useState(false);
   const [photos, setPhotos] = useState(null);
 
-  function handleDictionaryResponse(response) {
-    //   response that is sent by axios
-    setResults(response.data[0]);
+  function load() {
+    setLoaded(true);
+    search();
   }
 
-  function handlePexelsResponse(response) {
-    setPhotos(response.data.photos);
+  function wordSubmit(event) {
+    event.preventDefault();
+    search();
   }
 
   function search() {
@@ -34,18 +35,16 @@ export default function Dictionary(props) {
     axios.get(pexelsUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
-  function load() {
-    setLoaded(true);
-    search();
-  }
-
-  function wordSubmit(event) {
-    event.preventDefault();
-    search();
-  }
-
   function wordSearch(event) {
     setKeyword(event.target.value);
+  }
+
+  function handleDictionaryResponse(response) {
+    setResults(response.data[0]);
+  }
+
+  function handlePexelsResponse(response) {
+    setPhotos(response.data.photos);
   }
 
   if (loaded) {
